@@ -61,14 +61,14 @@ use inject_render_in_yew::create_theme_center;
     \"theme_count\": 5
   }";
 */
-include!(r"..\theme-center-metadata.rs");
-create_theme_center!(MATATABLE_JSON);
+include!(r"..\theme-center-metadata.rs"); //include! that commented above
+create_theme_center!(MATATABLE_JSON); //create the static ref of theme center create by deserializing MATATABLE_JSON
 #[test]
 fn create_theme_center_test() {
-    assert_eq!(get_default_theme(), "dark");
-    assert!(set_default_theme("lab").is_ok());
-    assert_eq!(get_default_theme(), "lab");
-    assert_eq!(get_render("color"), "dark-color");
-    assert!(change_theme("river").is_ok());
-    assert_eq!(get_render("color"), "river-color");
+    assert_eq!(get_default_theme(), "dark"); //get default theme in the theme center create by create_theme_center marco
+    assert!(set_default_theme("lab").is_ok()); //set default theme in the theme center create by create_theme_center marco
+    assert_eq!(get_default_theme(), "lab"); //get default theme after changed to lab
+    assert_eq!(get_render("color"), "dark-color"); //get css class name of color widgit now in the theme center create by create_theme_center marco
+    assert!(change_theme("river").is_ok()); //change theme now in the theme center create by create_theme_center marco
+    assert_eq!(get_render("color"), "river-color"); //get css class name of color widgit now after theme changed to river
 }
