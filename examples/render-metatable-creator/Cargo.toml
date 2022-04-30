@@ -7,4 +7,4 @@ edition = "2021"
 
 [dependencies]
 clap = "3.1.12"
-inject-render-in-yew={version="0.1.0",git="file://D:\\LAB\\Rust\\Project\\inject-render-in-yew"}
+inject-render-in-yew={version="0.1.0",git="https://github.com/TeamCyanRex/inject-render-in-yew.git"}
