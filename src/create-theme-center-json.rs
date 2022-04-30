@@ -32,18 +32,20 @@ use std::{fs, io};
 /// # Example
 ///
 /// ```
-/// assert_eq!(
-///    create_render_metatable_path(Some("")),
-///    PathBuf::from("theme-center-metadata.rs")
-/// );
-/// assert_eq!(
-///    create_render_metatable_path(Some("xx")),
-///    PathBuf::from("xx.rs")
-/// );
-/// assert_eq!(
-///    create_render_metatable_path(None),
-///    PathBuf::from("theme-center-metadata.rs")
-/// );
+/// // It is private,so doc test doesn't run code under this line 
+/// //use std::path::PathBuf;
+/// //assert_eq!(
+/// //  create_render_metatable_path(Some("")),
+/// // PathBuf::from("theme-center-metadata.rs")
+/// //);
+/// //assert_eq!(
+/// //  create_render_metatable_path(Some("xx")),
+/// // PathBuf::from("xx.rs")
+/// //);
+/// //assert_eq!(
+/// //  create_render_metatable_path(None),
+/// //  PathBuf::from("theme-center-metadata.rs")
+/// //);
 /// ```
 pub(crate) fn create_render_metatable_path(out_path_opt: Option<&str>) -> PathBuf {
     match out_path_opt {
@@ -61,7 +63,8 @@ pub(crate) fn create_render_metatable_path(out_path_opt: Option<&str>) -> PathBu
 /// # Example
 ///
 /// ```
-/// write_into_metatable(r"others\new", "some text");
+/// //It is private,so doc test doesn't run code under this line 
+/// //write_into_metatable(r"others\new", "some text");
 /// ```
 pub(crate) fn write_into_metatable<P: AsRef<Path>>(
     out_path: P,
@@ -83,7 +86,8 @@ pub(crate) fn write_into_metatable<P: AsRef<Path>>(
 /// # Example
 ///
 /// ```
-///  assert_eq!("like.rs", add_rs_suffix("like"));
+/// //It is private,so doc test doesn't run code under this line 
+/// //assert_eq!("like.rs", add_rs_suffix("like"));
 /// ```
 pub(crate) fn add_rs_suffix(src: &str) -> String {
     let len = src.len();
@@ -129,6 +133,7 @@ pub(crate) fn add_rs_suffix(src: &str) -> String {
 /// # Example
 ///
 /// ```
+///  use inject_render_in_yew::create_theme_center_json::add_slash_before_every_quota;
 ///  assert_eq!("\\\"i",add_slash_before_every_quota("\"i"));
 /// ```
 pub fn add_slash_before_every_quota(src: &str) -> String {
@@ -144,6 +149,7 @@ pub fn add_slash_before_every_quota(src: &str) -> String {
 /// # Example
 ///
 /// ```
+/// use inject_render_in_yew::create_theme_center_json::process_json_to_rs_static_metadata;
 /// let tester = "static MATATABLE_JSON:&'static str=\"{\\\"}\";";
 /// let after = process_json_to_rs_static_metadata("{\"}");
 /// assert_eq!(tester, after);
@@ -165,6 +171,8 @@ pub fn process_json_to_rs_static_metadata(src: &str) -> String {
 /// # Example
 ///
 /// ```
+/// use inject_render_in_yew::prelude::output_to_render_metatable;
+/// use inject_render_in_yew::prelude::create_render_metatable_json;
 /// output_to_render_metatable(None, &create_render_metatable_json(None, None, None));        
 /// ```
 pub fn output_to_render_metatable(out_path_opt: Option<&str>, la_rs_in: &str) {
@@ -193,6 +201,7 @@ pub fn output_to_render_metatable(out_path_opt: Option<&str>, la_rs_in: &str) {
 /// # Example
 ///
 /// ```
+/// use inject_render_in_yew::prelude::create_render_metatable_json;
 /// create_render_metatable_json(Some("dist"), Some("lab"), None);
 /// ```
 pub fn create_render_metatable_json(
@@ -222,7 +231,8 @@ pub fn create_render_metatable_json(
 /// # Example
 ///
 /// ```
-/// theme_center_json_string("css", "dark", regex);
+/// // It is private,so doc test doesn't run code under this line 
+/// //theme_center_json_string("css", "dark", None);
 /// ```
 pub(crate) fn theme_center_json_string(
     css_folder: &str,

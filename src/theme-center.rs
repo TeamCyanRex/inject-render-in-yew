@@ -29,13 +29,18 @@ use std::sync::{Mutex, MutexGuard, PoisonError};
 /// # Example
 ///
 /// ```
+/// use std::sync::MutexGuard;
+/// use std::sync::PoisonError;
+/// use std::path::Path;
+/// struct CustomThemesCenter;
+/// use inject_render_in_yew::theme_center::TrThemesCenter;
 /// impl TrThemesCenter for CustomThemesCenter {
-///    fn new<P: AsRef<Path>>(css_folder: P, default_theme_name: &str, regex: Option<&str>) -> Self{...}
-///    fn default_init() -> Self{...}
-///    fn get_default_theme(&self) -> String{...}
-///    fn set_default_theme(&self, theme: &str) -> Result<(), PoisonError<MutexGuard<String>>>{...}
-///    fn change_theme(&self, theme: &str) -> Result<(), PoisonError<MutexGuard<String>>>{...}
-///    fn get_render(&self, widget: &str) -> String{...}
+///    fn new<P: AsRef<Path>>(css_folder: P, default_theme_name: &str, regex: Option<&str>) -> Self{unimplemented!()}
+///    fn default_init() -> Self{unimplemented!()}
+///    fn get_default_theme(&self) -> String{unimplemented!()}
+///    fn set_default_theme(&self, theme: &str) -> Result<(), PoisonError<MutexGuard<String>>>{unimplemented!()}
+///    fn change_theme(&self, theme: &str) -> Result<(), PoisonError<MutexGuard<String>>>{unimplemented!()}
+///    fn get_render(&self, widget: &str) -> String{unimplemented!()}
 /// }
 /// ```
 pub trait TrThemesCenter {
@@ -59,12 +64,14 @@ pub trait TrThemesCenter {
 /// # Example
 ///
 /// ```
-///
-/// let themes_center=ThemesCenter::new(r"dist", "dark", None); or ThemesCenter::default_init();
-/// themes_center.get_default_theme();
-/// themes_center.set_default_theme("light");
-/// themes_center.change_theme("sky");
-/// let text_class=themes_center.get_render("text");
+/// //It is a marco related,so doc test doesn't run code under this line 
+/// //use inject_render_in_yew::theme_center::ThemesCenter;
+/// //use crate::inject_render_in_yew::theme_center::TrThemesCenter;
+/// //let themes_center=ThemesCenter::new(r"dist", "dark", None); //or ThemesCenter::default_init();
+/// //themes_center.get_default_theme();
+/// //themes_center.set_default_theme("light");
+/// //themes_center.change_theme("sky");
+/// //let text_class=themes_center.get_render("text");
 /// ```
 #[derive(Serialize, Deserialize, Debug)]
 pub struct ThemesCenter {

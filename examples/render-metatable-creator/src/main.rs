@@ -7,7 +7,7 @@ fn main() {
 
 fn clap_launch() {
     let matches = Command::new("Render-Metatable Creator")
-        .version("0.1.0")
+        .version("0.1.1")
         .author("vicimeans vicimeans12358@outlook.com")
         .about("create json file of themecenter from css folder")
         .arg(
