@@ -2,19 +2,21 @@
 use crate::create_theme_center_json::{
     add_rs_suffix, add_slash_before_every_quota, create_render_metatable_json,
     create_render_metatable_path, output_to_render_metatable, process_json_to_rs_static_metadata,
-    theme_center_json_string,write_into_metatable
+    theme_center_json_string, write_into_metatable,
 };
 #[allow(unused_imports)]
 use std::path::PathBuf;
 
 #[test]
-fn write_into_metatable_test(){
+fn write_into_metatable_test() {
     assert!(write_into_metatable(r"others\already", "some text").is_err());
-    let res=write_into_metatable(r"others\new", "some text");
+    let res = write_into_metatable(r"others\new", "some text");
     assert!(res.is_ok());
-    assert_eq!(String::from_utf8(std::fs::read(r"others\new").unwrap()).unwrap(),"some text");
-    let _=std::fs::remove_file(r"others\new");
-
+    assert_eq!(
+        String::from_utf8(std::fs::read(r"others\new").unwrap()).unwrap(),
+        "some text"
+    );
+    let _ = std::fs::remove_file(r"others\new");
 }
 #[test]
 fn add_rs_suffix_test() {
@@ -33,6 +35,7 @@ fn add_rs_suffix_test() {
 }
 
 #[test]
+#[ignore]
 fn create_render_metatable_json_test() {
     let dist_lab = "{
         \"default_theme\": \"lab\",
@@ -357,6 +360,7 @@ fn process_json_to_rs_static_metadata_test() {
     assert_eq!(tester, after);
 }
 #[test]
+#[ignore]
 fn theme_center_json_string_test() {
     let tester = "{
         \"default_theme\": \"lab\",
@@ -421,7 +425,7 @@ fn theme_center_json_string_test() {
     .split_ascii_whitespace()
     .collect::<Vec<&str>>()
     .join("");
-    let res = (0..200)
+    let res = (0..500)
         .map(|_| {
             theme_center_json_string("css", "lab", None)
                 .split_ascii_whitespace()

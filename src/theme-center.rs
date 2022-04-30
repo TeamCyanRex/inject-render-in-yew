@@ -31,9 +31,9 @@ impl TrThemesCenter for ThemesCenter {
         .map_or_else(||panic!("can not create css render list correctly,mostly you should check the css path parameter"), |crl|crl);
         let render_list = css_render_list.renderlist.clone();
         let theme = css_render_list.themelist.clone();
-        match theme.iter().find(|&now|now==&default_theme){
-            Some(_) =>{},
-            None=>panic!("default theme not found in the available theme list")
+        match theme.iter().find(|&now| now == &default_theme) {
+            Some(_) => {}
+            None => panic!("default theme not found in the available theme list"),
         }
         let render_now = {
             let mut now = HashMap::new();

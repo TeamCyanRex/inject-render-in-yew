@@ -27,7 +27,7 @@ fn css_render_list_test() {
         renderlist,
     };
     assert_eq!(tester, CssRenderList::new(r"css", None).unwrap());
-    assert!(CssRenderList::new(r"404",None).is_none());
+    assert!(CssRenderList::new(r"404", None).is_none());
 }
 
 #[test]
