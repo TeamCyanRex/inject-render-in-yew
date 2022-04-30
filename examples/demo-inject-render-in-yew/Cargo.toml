@@ -5,4 +5,12 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+#[workspace]
+#members = ["core", "scenes/*","src"]
+
+
 [dependencies]
+yew = "0.19.3"
+inject-render-in-yew={version="0.1.0",git="file://D:\\LAB\\Rust\\Project\\inject-render-in-yew"}
+lazy_static = "1.4.0"
+serde_json = "1.0.79"
