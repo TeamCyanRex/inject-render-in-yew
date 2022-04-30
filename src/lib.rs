@@ -13,6 +13,7 @@ mod theme_center_test;
 
 #[path = "./prelude.rs"]
 pub mod prelude;
+
 extern crate lazy_static;
 
 #[macro_export]
