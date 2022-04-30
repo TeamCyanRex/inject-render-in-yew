@@ -11,7 +11,7 @@ pub mod theme_center;
 #[path = "./theme-center-test.rs"]
 mod theme_center_test;
 
-#[path = "./prelude.rs"]
+//#[path = "./prelude.rs"]
 pub mod prelude;
 
 extern crate lazy_static;
