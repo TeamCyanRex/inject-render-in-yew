@@ -12,7 +12,7 @@ pub mod theme_center;
 mod theme_center_test;
 
 #[path = "./prelude.rs"]
-mod prelude;
+pub mod prelude;
 extern crate lazy_static;
 
 #[macro_export]
