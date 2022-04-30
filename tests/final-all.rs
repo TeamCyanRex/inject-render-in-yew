@@ -1,6 +1,6 @@
 #[allow(unused_imports)]
 use inject_render_in_yew::create_theme_center;
-static MATATABLE_JSON: &'static str = "{
+/*static MATATABLE_JSON: &'static str = "{
     \"default_theme\": \"lab\",
     \"css_render_list\": {
       \"themelist\": [
@@ -60,13 +60,15 @@ static MATATABLE_JSON: &'static str = "{
     },
     \"theme_count\": 5
   }";
+*/
+include!(r"..\theme-center-metadata.rs");
 create_theme_center!(MATATABLE_JSON);
 #[test]
 fn create_theme_center_test() {
-    assert_eq!(get_default_theme(), "lab");
-    assert!(set_default_theme("dark").is_ok());
     assert_eq!(get_default_theme(), "dark");
-    assert_eq!(get_render("color"), "lab-color");
+    assert!(set_default_theme("lab").is_ok());
+    assert_eq!(get_default_theme(), "lab");
+    assert_eq!(get_render("color"), "dark-color");
     assert!(change_theme("river").is_ok());
     assert_eq!(get_render("color"), "river-color");
 }
