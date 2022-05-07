@@ -1,4 +1,4 @@
-#![doc = "inject_render_in_yew/src/lib.rs"]
+#![doc = "inject_render_in_yew"]
 //! # pub mod inject_render_in_yew
 //!
 //! # What is it?
