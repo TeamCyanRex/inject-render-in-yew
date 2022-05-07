@@ -61,8 +61,10 @@ extern crate lazy_static;
 /// # Example
 ///
 /// ```
-/// include!("theme-center-metadata.rs");
-/// create_theme_center!(MATATABLE_JSON); or create_theme_center!(MATATABLE_JSON,CustomThemesCenter);
+/// //It is a marco related,so doc test doesn't run code under this line 
+/// //use inject_render_in_yew::create_theme_center;
+/// //include!("../theme-center-metadata.rs");
+/// //create_theme_center!(MATATABLE_JSON);or create_theme_center!(MATATABLE_JSON,CustomThemesCenter);
 /// ```
 #[macro_export]
 macro_rules! create_theme_center {

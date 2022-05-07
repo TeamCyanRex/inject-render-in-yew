@@ -54,6 +54,7 @@ impl Error for CssModelError {}
 /// # Example
 ///
 /// ```
+/// use inject_render_in_yew::css_model::is_css_file;
 /// assert_eq!(true, is_css_file(r"css\dark.css"));
 /// assert_eq!(false, is_css_file(r"css\no.cs"));
 /// ```
@@ -71,6 +72,7 @@ pub fn is_css_file<P: AsRef<Path>>(path: P) -> bool {
 /// # Example
 ///
 /// ```
+/// use inject_render_in_yew::css_model::walk_dir_for_css;
 /// let vec_pathbuf=walk_dir_for_css(r"css");
 /// ```
 pub fn walk_dir_for_css<P: AsRef<Path>>(folder: P) -> io::Result<Vec<Box<PathBuf>>> {
@@ -95,7 +97,8 @@ pub fn walk_dir_for_css<P: AsRef<Path>>(folder: P) -> io::Result<Vec<Box<PathBuf
 /// # Example
 ///
 /// ```
-/// let widgets=extract_css_basic_class(r"dark.css");
+/// //It is private,so doc test doesn't run code under this line 
+/// //let widgets=extract_css_basic_class(r"dark.css");
 /// ```
 pub(crate) fn extract_css_basic_class<P: AsRef<Path>>(
     path: P,
@@ -147,10 +150,11 @@ pub(crate) fn extract_css_basic_class<P: AsRef<Path>>(
 /// # Example
 ///
 /// ```
-/// let renderlist=cross_vec_str(
-///            &vec!["dark".to_string(), "light".to_string()],
-///            &vec!["color".to_string(), "size".to_string()]
-///        );
+/// //It is private,so doc test doesn't run code under this line 
+/// //let renderlist=cross_vec_str(
+/// //           &vec!["dark".to_string(), "light".to_string()],
+/// //           &vec!["color".to_string(), "size".to_string()]
+/// //       );
 /// ```
 pub(crate) fn cross_vec_str(
     main_key: &Vec<String>,
@@ -175,7 +179,8 @@ pub(crate) fn cross_vec_str(
 /// # Example
 ///
 /// ```
-///  assert_eq!("i", remove_hash_suffix("i-like"));
+/// //It is private,so doc test doesn't run code under this line 
+/// //assert_eq!("i", remove_hash_suffix("i-like"));
 /// ```
 pub(crate) fn remove_hash_suffix(tar: &str) -> String {
     if let Some(index) = tar.find('-') {
@@ -190,20 +195,8 @@ pub(crate) fn remove_hash_suffix(tar: &str) -> String {
 /// # Example
 ///
 /// ```
-/// let themelist = vec![
-/// "dark".to_string(),
-/// "desert".to_string(),
-/// "lab".to_string(),
-/// "light".to_string(),
-/// "river".to_string(),
-/// ];
-/// let widgitlist = vec!["color".to_string()];
-/// let renderlist = cross_vec_str(&themelist, &widgitlist);
-/// let css_render_list= CssRenderList {
-/// themelist,
-/// widgitlist,
-/// renderlist,
-/// };
+/// //It is private,so doc test doesn't run code under this line 
+/// //CssRenderList::new(r"css", None);
 /// ```
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
 pub struct CssRenderList {
